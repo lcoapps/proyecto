@@ -1,8 +1,8 @@
 
 section#navPag{
-    width: 1200px;
+    width: 1230px;
     height: 800px;
-    background-color:rgb(238, 241, 236);
+    background-color:rgb(255, 255, 255);
     text-align: center;
 
 }
@@ -15,10 +15,14 @@ div#nav_drawer{
 }
 div#pagina{
     width: 950px;
-    height: 800px;
-    float: left;
-    background-color:rgb(234, 234, 236);
+    height: 120px;
+    float: right;
+    background-color:rgb(255, 255, 255);
 
+}
+div#formRegistro{
+    width: 950px;
+    height: 200px;
 }
 
 pre#preMenu{
@@ -52,5 +56,42 @@ pre#preMenu{
   .btn-group:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
   }
-  
+  /*Formulario*/
+  div#formRegistro{
+      height: 750px;
+      width: 400px;
+      float: left;
+      background-color: red;
+      background-image: linear-gradient(rgb(50, 50, 82),rgb(167, 224, 231));
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      text-align: left;
+  }
+  div#formRegistro2{
+    height: 650px;
+    width: 400px;
+    float: left;
+    background-color: rgb(255, 253, 253);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-align: left;
+}
+  input[type=text], select {
+    width: 100%;
+    padding: 17px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type=password], select {
+    width: 100%;
+    padding: 17px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
   
