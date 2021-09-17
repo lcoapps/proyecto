@@ -1,6 +1,6 @@
 
 section#navPag{
-    width: 2024px;
+    width: 1200px;
     height: 800px;
     background-color:rgb(238, 241, 236);
     text-align: center;
@@ -14,7 +14,7 @@ div#nav_drawer{
 
 }
 div#pagina{
-    width: 1024px;
+    width: 950px;
     height: 800px;
     float: left;
     background-color:rgb(234, 234, 236);
@@ -38,7 +38,7 @@ pre#preMenu{
       padding: 15px 51.5px;
       cursor:pointer;
       display: inline-block;      
-      font-size:17px;
+      font-size:15px;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       transition-duration: 0.4s;
       width: 250px;
