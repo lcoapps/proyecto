@@ -94,4 +94,36 @@ pre#preMenu{
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+
+  /* PaginaAspectosGenerales */
+.hambu{
+  font-size: 4rem;
+  color: blue;
+  margin: 0;
+  padding: 1rem 1rem;
   
+}
+
+.contboton{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+  ;
+  
+}
+
+.btn1{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 1rem;
+}
+.btn1:hover{
+  color: white;
+  background-color: #008CBA;
+}
+.btn1 img{
+  max-width: 20px;
+  padding-right: 10px;
+}
