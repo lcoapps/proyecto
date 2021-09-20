@@ -49,7 +49,7 @@ pre#preMenu{
   }
  
   .btn-group button:hover {
-    background-color: #008CBA; /* Green */
+    background-color: green; /* Green */
     color: white;
   }
    
