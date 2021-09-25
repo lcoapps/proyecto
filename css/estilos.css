@@ -5,6 +5,9 @@
 h1{
   font-family: 'RocknRoll One', sans-serif;
 }
+#buttonreg_nav{
+  border: 2px solid #008CBA;
+}
 
 section#navPag{
   width: 1230px;
