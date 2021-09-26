@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/estilos.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <title>Formulario</title>
+
+</head>
+
+<body>
+    <section id="navPag">
+        <div id="pagina">
+            <h1>TIENDA VIRTUAL REGISTRO USUARIOS</h1>
+        </div>
+
+        <div id="nav_drawer">
+            <pre id="preMenu">
+
+<img id="logo_HB" src="https://res.cloudinary.com/lauram2celis/image/upload/v1632408090/Proyecto%20Mintic/Logo_HB_2_l4lvtf.png" alt="logo_HB">
+                </pre>
+
+            <div class="btn-group">
+                <button id="buttonreg_nav">Registro Usuario</button>
+                <button class="button" onclick="window.open('./aspectosgenerales.html')">Admin App</button>
+                <button class="button" onclick="window.open('./index.html')">Home</button>
+
+            </div>
+        </div>
+
+        <div id="formRegistro">
+            <fieldset id="Regist">
+                <legend>Registro de Usuario</legend>
+                <form action="">
+                    <label for="nombre">Nombre Completo:
+                        <input id="nombre" placeholder="Escribe tu nombre" type="text"></input>
+                    </label>
+                    <label for="fechaNacimiento"> Fecha de Nacimiento: 
+                        <input id="fechaNacimiento" type="date" min="1930-01-01" value="2005-07-29" max="2005-01-01">
+                    </label><br>
+                    <label for="email">Correo Electronico:
+                        <input id="email" placeholder="Correo Electronico" type="text"></input>
+                    </label>
+                    <label for="celular">Teléfono Movil:
+                        <input id="celular" placeholder="Movil" type="text"></input>
+                    </label>
+                    <label for="contraseña">Contraseña:
+                        <input id="contraseña" placeholder="Contraseña" type="password"></input>
+                    </label>
+                    <label for="conf_contraseña">Contraseña:
+                        <input id="conf_contraseña" placeholder="Confirmar Contraseña" type="password"></input>
+                    </label>
+                    <label for="">Ubicación:</label>
+                    <br>
+                    </label>
+                    <label for="">
+                        <input type="radio" name="ubicacion">
+                        Medellín
+                    </label><br>
+                    <label for="">
+                        <input type="radio" name="ubicacion" checked>
+                        Envigado
+                    </label><br>
+                    <label for="">
+                        <input type="radio" name="ubicacion" checked>
+                        Sabaneta
+                    </label><br>
+                    <label for="">
+                        <input type="radio" name="ubicacion" checked>
+                        Itagüí
+                    </label><br>
+                </form>
+
+            </fieldset>
+
+
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
