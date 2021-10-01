@@ -1,10 +1,4 @@
-*{
-  margin: 0;
-}
-
-h1{
-  font-family: 'RocknRoll One', sans-serif;
-}
+/* ESTILOS PARA LA BARRA DE NAVEGACIÓN */
 #buttonreg_nav{
   border: 2px solid #008CBA;
 }
@@ -31,7 +25,7 @@ div#pagina{
   background-color:rgb(255, 255, 255);
   text-align: center;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 /*div#formRegistro{
@@ -39,20 +33,23 @@ div#pagina{
   height: 200px;
 }*/
 
-pre#preMenu{
+div#preMenu{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: medium;
   color: rgb(2, 2, 2);
   background-color: rgb(243, 167, 54);
   font-weight: bold;
-  
+  text-align: center;
 }
 
 /*Logo temporal Tienda Comidas*/
 #logo_HB{
   width: 200px;
+  text-align: center;
+  margin: 10px 25px 10px 25px;
+
 }
-  
+
 .btn-group button{
   background-color:white ;
   border-color: lightgreen;
@@ -71,23 +68,188 @@ pre#preMenu{
   color: white;
 }
 
-
 .btn-group:not(:last-child) {
   border-bottom: none; /* Prevent double borders */
 }
-  /*Formulario*/
-div#formRegistro{
-  height: 650px;
-  width: 500px;
-  float: left;
-  background-color: rgb(251, 255, 0);
-  background-image: linear-gradient(rgb(196, 131, 10),rgb(250, 212, 132));
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
-  text-align: left;
-  margin-left: 250px;;
+
+/* ----------------------------------------------- */
+
+  /* ----------BLOQUE CSS PÁGINA REGISTRO----------*/
+
+h1{
+  font-family: 'RocknRoll One', sans-serif;
+  text-align: center;
 }
 
+div#formRegistro{
+  /* display: grid; *//*Estos tres primeros son nuevos para darle el tipo grid*/
+/*   grid-template-columns: 1fr 1fr;
+  gap: 20px; */
+  width: 700px;
+  float: left;
+  background-color: rgb(251, 255, 0);
+  background-image: linear-gradient(rgb(243, 167, 54), #FFE045);
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: left;
+  margin-left: 160px;
+  padding: 0 20px 20px 20px;
+}
+
+.formulario__label{
+  display: block; /*para que abarque el 100%*/
+  font-weight: 700;/* para fuente en negrita */
+  padding: 10px;
+  cursor: pointer; /* Permite que al pararme en Usuario me señale el input */
+}
+
+.formulario__grupo-input{
+  position: relative;/* para que el grupo tenga un posicionamiento relativo y luego lo haremos al ícono "X" */
+}
+
+.formulario__input{
+  width: 100%; /*para que abarque todo el espacio disponible*/
+  background: #fff;
+  border: 3px solid transparent; /*para que solo se vea cuando tiene su estado focus*/
+  border-radius: 3px;
+  height: 45px;
+  line-height: 45px;/*para asegurarnos de que el texto quede centrado*/
+  padding: 0 40px 0 10px; /* Arriba-derecha-abajo - izquierda */
+  transition: .3s ease all; /* Función de tiempo ease para todas las propiedades */
+}
+
+/* Ahora queremos que cuando le demos click, es decir tenga su estado focus aparezca un borde, para que el usuario sepa qué está editando*/
+.formulario__input:focus{
+  border: 3px solid #0075ff;
+  outline: none;/*para quitarle un pequeño subrayado que le pone el navegador*/
+  box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);/*es una sombra con una transparencia de 0.4*/
+}
+
+/* Ahora queremos trabajar con el mensaje de abajo*/
+.formulario__input-error{
+  font-size: 12px; /* para que se vea más pequeño*/
+  margin-bottom: 0; /* para que quite el espacio que pone por defecto*/
+  display: none; /* para que solo se muestren cuando yo quiera y estén ocultos por defecto*/
+}
+
+.formulario__input-error-activo{
+  display: block; /* aquí estamos poniendo un modificador para que cuando el error del input esté activo que me lo display */
+}
+
+/* Ahora para poner la equis en la parte derecha del cajón */
+.formulario__validacion-estado{
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  z-index: 100;/* para asegurarnos de que va a estar por encima de otros elementos */
+  font-size: 16px;
+  color: #333;
+  opacity: 0; /*para que solo se muestre cuando tenemos algún error */
+}
+
+/* para que la parte de T&C tenga una margen a la derecha*/
+.formulario__checkbox{
+  margin-right: 10px;;
+}
+
+/* para que T&C me abarquen todo, no solo una columna, bueno le estoy diciendo a estos elementos que abarquen dos columnas, no una sola (min 33.09) */
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar{
+  grid-column: span 2;
+}
+
+.formulario__mensaje{
+  height: 45px;
+  line-height: 45px;
+  background: #F66060;
+  padding: 0 15px;/* arriba y abajo 0px izquierda y derecha 15px */
+  border-radius: 3px;
+  display: none;/* para que el mensaje esté oculto */
+}
+
+.formulario__mensaje-activo{
+display: block;/* modificador de activo */
+}
+
+.formulario__mensaje p {
+margin: 0;
+}
+
+.formulario__grupo-btn-enviar{
+  display: flex;/* para que me ponga el texto a la derecha del botón*/
+  flex-direction: column; /* para que me ponga el texto debajo del botón*/
+  align-items: center;
+}
+
+.formulario__btn{
+  height: 45px;
+  line-height: 45px;
+  width: 30%;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .1s ease all;
+}
+
+.formulario__btn:hover{
+  box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito{
+  font-size: 14px;
+  color: #119200; 
+  display: none;
+}
+
+.formulario__mensaje-exito-activo{
+  display: block;
+}
+
+
+/* ----Estilos para Validación ----- */
+.formulario__grupo-correcto .formulario__validacion-estado{
+  color: #1ed12d;
+  opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label{
+  color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+  color: #bb2929;
+  opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input{
+  border: 3px solid #bb2929;
+}
+
+@media screen and (max-width: 800px) {
+  .formulario{
+      grid-template-columns: 1fr;
+  }
+
+  /* como arriba le dije a estos grupos que me ocuparan 2, aquí debo decirle nuevamente que ponga 1 */
+  .formulario__grupo-terminos,
+  .formulario__mensaje,
+  .formulario__grupo-btn-enviar{
+      grid-column: 1;
+  }
+
+  .formulario__btn{
+      width: 100%;
+  }
+
+}
+
+/* ----------------------------------------------- */
+
+/*BLOQUE PÁGINA ASPECTOS GENERALES*/
 input[type=text], select {
   width: 100%;
   padding: 17px 20px;
@@ -107,6 +269,7 @@ input[type=password], select {
   box-sizing: border-box;
 }
 
+/* Si nos quedamos con el segundo registro hay que quitar estos dos*/
 #Regist{
   padding-top: 10px;
 }
