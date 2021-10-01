@@ -1,85 +1,151 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="css/estilos.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-    <title>Formularios</title>
-
+    <title>Registro</title>
 </head>
-
 <body>
-    <section id="navPag">
-        <div id="pagina">
-            <h1>TIENDA VIRTUAL REGISTRO USUARIOS</h1>
+    <!--BARRA DE NAVEGACIÓN-->
+    <div id="nav_drawer">
+        <div id="preMenu">
+            <img id="logo_HB" src="https://res.cloudinary.com/lauram2celis/image/upload/v1632408090/Proyecto%20Mintic/Logo_HB_2_l4lvtf.png" alt="logo_HB">
         </div>
 
-        <div id="nav_drawer">
-            <pre id="preMenu">
+        <div class="btn-group">
+            <button id="buttonreg_nav">Registro Usuario</button>
+            <button class="button" onclick="window.open('./aspectosgenerales.html')">Admin App</button>
+            <button class="button" onclick="window.open('./index.html')">Home</button>
+        </div>
+    </div>
 
-<img id="logo_HB" src="https://res.cloudinary.com/lauram2celis/image/upload/v1632408090/Proyecto%20Mintic/Logo_HB_2_l4lvtf.png" alt="logo_HB">
-                </pre>
-
-            <div class="btn-group">
-                <button id="buttonreg_nav">Registro Usuario</button>
-                <button class="button" onclick="window.open('./aspectosgenerales.html')">Admin App</button>
-                <button class="button" onclick="window.open('./index.html')">Home</button>
-
+    <div id="formRegistro">
+        <h1>FORMULARIO REGISTRO</h1>
+        <br>
+        <form action=""class="formulario" id="formulario">
+            <!--Grupo, Nombre-->
+            <div class="formulario__grupo" id="grupo__nombre">
+                <label for="nombre" class="formulario__label">Nombre</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="nombre" id="campoNombre" placeholder="John Doe">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El nombre tiene que ser de máximo 30 carateres y solo puede contener Letras y espacios, pueden llevar acentos, no debe tener números, ni caracteres especiales.</p>
             </div>
-        </div>
+            <!--Grupo, Fecha de Nacimiento-->
+            <div class="formulario__grupo" id="grupo__fechaNacimiento">
+                <label for="fechaNacimiento" class="formulario__label">Fecha de Nacimiento</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="fechaNacimiento" id="fechaNacimiento" placeholder="aaaa-mm-dd" min="1930-01-01" max="2003-01-01">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">La fecha de nacimiento debe ser antes del 2003</p>
+            </div>
 
-        <div id="formRegistro">
-            <fieldset id="Regist">
-                <legend>Registro de Usuario</legend>
-                <form action="">
-                    <label for="nombre">Nombre Completo:
-                        <input id="campoNombre" placeholder="Escribe tu nombre" type="text"></input>
-                    </label>
-                    <label for="fechaNacimiento"> Fecha de Nacimiento: 
-                        <input id="fechaNacimiento" type="date" min="1930-01-01" value="2005-07-29" max="2005-01-01">
-                    </label><br>
-                    <label for="email">Correo Electronico:
-                        <input id="email" placeholder="Correo Electronico" type="text"></input>
-                    </label>
-                    <label for="celular">Teléfono Movil:
-                        <input id="celular" placeholder="Movil" type="text"></input>
-                    </label>
-                    <label for="contraseña">Contraseña:
-                        <input id="contraseña" placeholder="Contraseña" type="password"></input>
-                    </label>
-                    <label for="conf_contraseña">Contraseña:
-                        <input id="conf_contraseña" placeholder="Confirmar Contraseña" type="password"></input>
-                    </label>
-                    <label for="">Ubicación:</label>
-                    <br>
-                    </label>
-                    <label for="">
-                        <input type="radio" name="ubicacion">
-                        Medellín
-                    </label><br>
-                    <label for="">
-                        <input type="radio" name="ubicacion" checked>
-                        Envigado
-                    </label><br>
-                    <label for="">
-                        <input type="radio" name="ubicacion" checked>
-                        Sabaneta
-                    </label><br>
-                    <label for="">
-                        <input type="radio" name="ubicacion" checked>
-                        Itagüí
-                    </label><br>
-                </form>
+            <!--Grupo, Estado Civil-->
+            <div class="formulario__grupo" id="grupo__estadoCivil">
+                <label for="estadoCivil" class="formulario__label">Estado Civil--</label>
+                <div class="formulario__grupo-input">
+                    <select name="estadoCivil" id="estadoCivil">
+                        <option value="1">Casado</option>
+                        <option value="2">Soltero</option>
+                        <option value="3">Unión Libre</option>
+                        <option value="4">Separado | Divorciado</option>
+                    </select>
+                </div>
+                <p class="formulario__input-error">La fecha de nacimiento debe ser antes del 2003</p>
+            </div>
 
-            </fieldset>
+            <!--Grupo, Contraseña-->
+            <div class="formulario__grupo" id="grupo__password">
+                <label for="password" class="formulario__label">Contraseña</label>
+                <div class="formulario__grupo-input">
+                    <input type="password" class="formulario__input" name="password" id="password" placeholder="">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos</p>
+            </div>
 
+            <!--Grupo, Contraseña Confirmación-->
+            <div class="formulario__grupo" id="grupo__password2">
+                <label for="password2" class="formulario__label">Repetir Contraseña</label>
+                <div class="formulario__grupo-input">
+                    <input type="password" class="formulario__input" name="password2" id="password2" placeholder="">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Ambas contraseñas deben ser iguales</p>
+            </div>
 
-        </div>
-    </section>
+            <!--Grupo, Correo Electrónico-->
+            <div class="formulario__grupo" id="grupo__correo">
+                <label for="correo" class="formulario__label">Correo Electrónico</label>
+                <div class="formulario__grupo-input">
+                    <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guión bajo</p>
+            </div>
 
+            <!--Grupo, Teléfono Móvil-->
+            <div class="formulario__grupo" id="grupo__telefono">
+                <label for="telefono" class="formulario__label">Teléfono Móvil</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="3215555555">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El teléfono solo puede contener números y el máximo son 10 dígitos</p>
+            </div>
+            
+            <!--este lo dejé por el Mintic para el radio button-->
+            <label for="">Ubicación:</label>
+            <br>
+            </label>
+            <label for="">
+                <input type="radio" name="ubicacion">
+                Medellín
+            </label><br>
+            <label for="">
+                <input type="radio" name="ubicacion" checked>
+                Envigado
+            </label><br>
+            <label for="">
+                <input type="radio" name="ubicacion" checked>
+                Sabaneta
+            </label><br>
+            <label for="">
+                <input type="radio" name="ubicacion" checked>
+                Itagüí
+            </label><br>
+
+            <!--Grupo: Términos y Condiciones y el botón-->
+            <div class="formulario__grupo" id="grupo__terminos">
+                <label class="formulario__label">
+                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos"> Acepto los Términos y Condiciones
+                </label>
+            </div>
+
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fas fa-exclamation-triangle"></i>  <b>Error</b> Por favor rellene el formulario correctamente </p>
+            </div>
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button class="formulario__btn" type="submit">Enviar</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡¡¡Formulario enviado exitosamente!!!</p>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="js/form4.js"></script>
+    <script src="https://kit.fontawesome.com/e7cc5fc9bc.js" crossorigin="anonymous"></script>
 
 
 </body>
-
 </html>
