@@ -5,11 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><!--letras googlefonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
     <title>Administración generalidades</title>
 </head>
 
 <body>
+    <!--BARRA DE NAVEGACIÓN-->
+    <div id="nav_drawer">
+        <p class="hambu"><span>&#8803</span></p>
+        <div class="btn-group">
+
+            <button id="buttonreg_nav" onclick="window.open('./registro.html')">Registro Usuario</button>
+            <button class="button">Admin App</button>
+            <button class="button" onclick="window.open('./index.html')">Home</button>
+        </div>
+    </div>
+        
     <section id="navPag">
         <div id="pagina">
             <h1>Administracion Página</h1>
@@ -19,20 +34,6 @@
                 <button class="btn1"><img src="./img/login.png" alt=""> ingresar</button>
             </div>
         </div>
-
-
-        <div id="nav_drawer">
-            <p class="hambu"><span>&#8803</span></p>
-            <div class="btn-group">
-
-                <button id="buttonreg_nav" onclick="window.open('./registro.html')">Registro Usuario</button>
-                <button class="button">Admin App</button>
-                <button class="button" onclick="window.open('./index.html')">Home</button>
-
-            </div>
-
-        </div>
-
     </section>
 
 </body>
