@@ -36,24 +36,24 @@ form.addEventListener("submit",function(event)
 • No debe contener ningún número */
 
 function validar_nombre(txtNombre){
-    txtNombre = document.getElementById('campoNombre'); //Obtengo el valor ingresado en el input
-    console.log(txtNombre.value);
+    txtNombre = document.getElementById('campoNombre').value; //Obtengo el valor ingresado en el input
+    console.log(txtNombre);
 /* 	let tfData=new FormData(formulario);
     var txtNombre=tfData.get("campoNombre"); */
-	if (txtNombre.value.length<4 || txtNombre.value.length>30){
+
+	//PRUEBA LONGITUD
+/* 	if (txtNombre.length<4 || txtNombre.length>30){
 		alert("Longitud No VALIDA");            
 	} else {
 		alert("longitud válida")
-	}	
+	}	 */
 
-
-/* 	if(expresiones.nombre.test(txtNombre.value)){
-		alert("Cumple")
-		expresiones.nombre = true;
+	if (expresiones.nombre.test(txtNombre)){
+		console.log("OK Validación")
 	} else {
-		alert("No Cumple")
-		expresiones.nombre = false;
-	} */
+		console.log("El nombre debe ser mayor a 4, menor a 30 y NO debe contener caracteres especiales, ni números")
+	}
+
 
 }
 
@@ -82,5 +82,5 @@ function validar_contrasenas(password1, password2){
 
 }
 
-module.exports.validar_nombre = validar_nombre;
-module.exports.validar_contrasenas = validar_contrasenas;
+// module.exports.validar_nombre = validar_nombre;
+// module.exports.validar_contrasenas = validar_contrasenas;
