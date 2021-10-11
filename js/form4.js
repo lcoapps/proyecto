@@ -1,5 +1,7 @@
-const formulario = document.getElementById('formulario');
+const form = document.getElementById('formulario');
 //const inputs = document.querySelectorAll('#formulario input') // se pone # para acceder al id
+let btnEnvio = document.getElementById("btnEnviar");
+btnEnvio.onclick = validar_nombre;
 
 //Expresiones regulares para realizar las validaciones
 const expresiones = {
@@ -17,9 +19,6 @@ const campos = {
 	correo: false,
 	telefono:false,
 }
-
-let btnEnvio = document.getElementById("btnEnviar");
-btnEnvio.onclick = validar_nombre();
 
 //Esto es para que no se envíe vacío
 form.addEventListener("submit",function(event)
@@ -39,14 +38,22 @@ form.addEventListener("submit",function(event)
 function validar_nombre(txtNombre){
     txtNombre = document.getElementById('campoNombre'); //Obtengo el valor ingresado en el input
     console.log(txtNombre.value);
+/* 	let tfData=new FormData(formulario);
+    var txtNombre=tfData.get("campoNombre"); */
+	if (txtNombre.value.length<4 || txtNombre.value.length>30){
+		alert("Longitud No VALIDA");            
+	} else {
+		alert("longitud válida")
+	}	
 
-	if(expresiones.nombre.test(txtNombre.value)){
+
+/* 	if(expresiones.nombre.test(txtNombre.value)){
 		alert("Cumple")
-		//expresiones.nombre = true;
+		expresiones.nombre = true;
 	} else {
 		alert("No Cumple")
-		//expresiones.nombre = false;
-	}
+		expresiones.nombre = false;
+	} */
 
 }
 
@@ -74,3 +81,6 @@ function validar_contrasenas(password1, password2){
 	}
 
 }
+
+module.exports.validar_nombre = validar_nombre;
+module.exports.validar_contrasenas = validar_contrasenas;
