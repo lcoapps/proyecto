@@ -1,7 +1,9 @@
 const form = document.getElementById('formulario');
 //const inputs = document.querySelectorAll('#formulario input') // se pone # para acceder al id
 let btnEnvio = document.getElementById("btnEnviar");
-btnEnvio.onclick = validar_nombre;
+btnEnvio.addEventListener('click', validar_nombre);
+btnEnvio.addEventListener('click', validar_contrasenas);
+//btnEnvio.onclick = validar_nombre && validar_contrasenas;
 
 //Expresiones regulares para realizar las validaciones
 const expresiones = {
@@ -35,6 +37,11 @@ form.addEventListener("submit",function(event)
 • No puede tener ningún carácter especial como: ‘@’, ‘!’,’_’,’
 • No debe contener ningún número */
 
+function validateAll(){
+	validar_nombre;
+	validar_contrasenas;
+}
+
 function validar_nombre(txtNombre){
     txtNombre = document.getElementById('campoNombre').value; //Obtengo el valor ingresado en el input
     console.log(txtNombre);
@@ -50,11 +57,11 @@ function validar_nombre(txtNombre){
 
 	if (expresiones.nombre.test(txtNombre)){
 		console.log("OK Validación")
+		return true;
 	} else {
 		console.log("El nombre debe ser mayor a 4, menor a 30 y NO debe contener caracteres especiales, ni números")
+		return false;
 	}
-
-
 }
 
 //VALIDACIÓN CAMPO CONTRASEÑA
@@ -72,12 +79,17 @@ function validar_contrasenas(password1, password2){
 
 	if (password1.value.length == 0 || password2.value.length == 0){
 		alert("Agregue una contraseña")
-	} else if (password1.value == password2.value){
-		console.log("Tienen la misma longitud")
+	} else if (password1.value == password2.value && password1.value.length == password2.value.length){
+		console.log("Las contraseñas son iguales")
+		console.log("Y Tienen la misma longitud")
 		expresiones.password = true;
+		console.log(expresiones.password);
+		return true;
 	} else {
 		console.log("No Cumple")
 		expresiones.password = false;
+		console.log(expresiones.password);
+		return false;
 	}
 
 }
