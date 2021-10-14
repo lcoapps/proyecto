@@ -29,18 +29,13 @@ form.addEventListener("submit",function(event)
 }
 )
 
-//VALIDACIÓN DE CAMPO NOMBRE
+//FUNCIÓN PARA VALIDACIÓN DE CAMPO NOMBRE
 
 /* Debe cumplir con las siguientes condiciones:
 • Debe tener una longitud mayor a 4
 • Debe tener una longitud máxima de 30 caracteres
 • No puede tener ningún carácter especial como: ‘@’, ‘!’,’_’,’
 • No debe contener ningún número */
-
-function validateAll(){
-	validar_nombre;
-	validar_contrasenas;
-}
 
 function validar_nombre(txtNombre){
     txtNombre = document.getElementById('campoNombre').value; //Obtengo el valor ingresado en el input
@@ -64,7 +59,7 @@ function validar_nombre(txtNombre){
 	}
 }
 
-//VALIDACIÓN CAMPO CONTRASEÑA
+//FUNCIÓN PARA VALIDACIÓN CAMPO CONTRASEÑA
 
 /* Ambos strings deben cumplir con las siguientes condiciones:
 • Se debe verificar en un principio que el campo confirmar contraseña no sea dejado vacío o nulo.
