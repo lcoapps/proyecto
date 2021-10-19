@@ -1,9 +1,12 @@
+//OCTUBRE 19 DE 2021
 const form = document.getElementById('formulario');
 //const inputs = document.querySelectorAll('#formulario input') // se pone # para acceder al id
 let btnEnvio = document.getElementById("btnEnviar");
+
 btnEnvio.addEventListener('click', validar_nombre);
 btnEnvio.addEventListener('click', validar_contrasenas);
 //btnEnvio.onclick = validar_nombre && validar_contrasenas;
+// btnEnvio.onclick=validar_nombre, validar_contrasenas;
 
 //Expresiones regulares para realizar las validaciones
 const expresiones = {
@@ -67,13 +70,27 @@ function validar_nombre(txtNombre){
 • Se debe verificar que sean exactamente iguales en cada una de las posiciones de las cadenas. */
 
 function validar_contrasenas(password1, password2){
-    password1 = document.getElementById('campoConfirmarContrasena'); //Obtengo el valor ingresado en el input
+    password1 = document.getElementById('campoContrasena'); //Obtengo el valor ingresado en el input
     console.log(password1.value);
-	password2 = document.getElementById('password2');
+	password2 = document.getElementById('campoConfirmarContrasena');
 	console.log(password2.value);
 
+/* 	if (password1.value == password2.value && password1.length == password2.length){
+		console.log("Las contraseñas son iguales")
+		console.log("Y Tienen la misma longitud")
+		expresiones.password = true;
+		console.log(expresiones.password);
+		return true;
+	} else {
+		console.log("No Cumple")
+		expresiones.password = false;
+		console.log(expresiones.password);
+		return false;
+	} */
+
 	if (password1.value.length == 0 || password2.value.length == 0){
-		alert("Agregue una contraseña")
+		alert("Agregue una contraseña");
+		return false;
 	} else if (password1.value == password2.value && password1.value.length == password2.value.length){
 		console.log("Las contraseñas son iguales")
 		console.log("Y Tienen la misma longitud")
