@@ -75,19 +75,6 @@ function validar_contrasenas(password1, password2){
 	password2 = document.getElementById('campoConfirmarContrasena');
 	console.log(password2.value);
 
-/* 	if (password1.value == password2.value && password1.length == password2.length){
-		console.log("Las contraseñas son iguales")
-		console.log("Y Tienen la misma longitud")
-		expresiones.password = true;
-		console.log(expresiones.password);
-		return true;
-	} else {
-		console.log("No Cumple")
-		expresiones.password = false;
-		console.log(expresiones.password);
-		return false;
-	} */
-
 	if (password1.value.length == 0 || password2.value.length == 0){
 		alert("Agregue una contraseña");
 		return false;
