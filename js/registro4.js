@@ -23,16 +23,19 @@ function recibirEdad(){
 function ordenarEdad(edad){
     edad= recibirEdad()
     console.log('La edad registrada es: ' + edad);
-    let objeto = {
+    let info = [];
+    let objeto = [{
         'nombre': document.getElementById('campoNombre').value,
         'contrasena': document.getElementById('campoContrasena').value,
         'correo': document.getElementById('campoCorreo').value,
         'confirmacioncontrasena': document.getElementById('campoConfirmarContrasena').value,
         'telefono': document.getElementById('campoTelefono').value,
         'edad': edad
-    }
+    }]
     console.log(objeto);
-    return objeto;
+    info.push(objeto);
+    console.log(info);
+    return info;
 }
 
 /* function promedioEdad(objeto){
