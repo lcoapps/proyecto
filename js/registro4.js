@@ -4,7 +4,8 @@ const form = document.getElementById('formulario');
 let btnEnvio = document.getElementById("btnEnviar");
 
 // btnEnvio.addEventListener('click', recibirEdad);
-btnEnvio.addEventListener('click', ordenarEdad);
+// btnEnvio.addEventListener('click', ordenarEdad);
+btnEnvio.addEventListener('click', promedioEdad);
 
 //Esto es para que no se envíe vacío
 form.addEventListener("submit",function(event)
@@ -12,6 +13,11 @@ form.addEventListener("submit",function(event)
     event.preventDefault();
 }
 )
+
+//se declaran afuera para que las agregue al arreglo, de lo contrario las inicializa cada que llame la función
+let info = [];
+let generico = [];
+let objeto;
 
 function recibirEdad(){
     let edad;
@@ -21,26 +27,45 @@ function recibirEdad(){
 }   
 
 function ordenarEdad(edad){
-    edad= recibirEdad()
-    console.log('La edad registrada es: ' + edad);
-    let info = [];
-    let objeto = [{
+    edad=recibirEdad();
+    objeto = {
         'nombre': document.getElementById('campoNombre').value,
         'contrasena': document.getElementById('campoContrasena').value,
         'correo': document.getElementById('campoCorreo').value,
         'confirmacioncontrasena': document.getElementById('campoConfirmarContrasena').value,
         'telefono': document.getElementById('campoTelefono').value,
         'edad': edad
-    }]
+    }
     console.log(objeto);
     info.push(objeto);
+    console.log('Arreglo sin ordenar');
+    console.log(info);
+
+    //Límite de registros guardados (20)
+    if (info.length>20){
+        info.splice(info.length-1,1); //Aquí borro la última posición
+    }
+    //Organizo la función
+    info.sort((a, b) => b.edad - a.edad);
+    console.log('Arreglo ordenado');
     console.log(info);
     return info;
 }
 
-/* function promedioEdad(objeto){
+function promedioEdad(args){
+    args=ordenarEdad();
+    let suma=0;
+    let j =0;
+    for(var i in args){
+        suma = parseInt(suma) + parseInt(args[i]['edad']) ;
+        //console.log(suma);
+        j++;
+    }
+    let prom;
+    prom = (suma / j);
+    console.log('el promedio de edades es: '+ prom);
+}
 
-} */
 
 // module.exports.recibirEdad = recibirEdad;
 // module.exports.ordenarEdad = ordenarEdad;
